@@ -1,8 +1,1 @@
----
-output: 
-  html_document: 
-    highlight: tango
-    theme: cerulean
----
 # Depuração e Teste de Algorimos
-

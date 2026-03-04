@@ -1,11 +1,682 @@
----
-output: 
-  html_document: 
-    highlight: tango
-    theme: cerulean
----
 # Introdução a Lógica de Programação
+
+## Programas Compilados
+
+Em uma linguagem compilada, existe um passo prévio chamado **compilação**. Um programa especial (o compilador) lê todo o código-fonte de uma vez, verifica erros e o traduz integralmente em um arquivo binário executável (como um `.exe` no Windows).
+
+### Linguagem C/C++
+
+![](media/01-programas_compilados.jpg)
+
+### Linguagem JAVA
+
+![](media/02-programas_compilados-java.jpg)
+
+## Programas Interpretados
+
+Em uma linguagem interpretada, o código não é transformado em um arquivo binário antes da execução. Em vez disso, um programa chamado **interpretador** lê o código-fonte e o executa linha por linha, em tempo real.
+
+### Linguagem PYTHON
+
+![](media/03-programas_interpretados-python.jpg)
+
+### Linguagem JAVASCRIPT
+
+![](media/04-programas_interpretados-javascript.jpg)
+
+Resumo das vantagens e desvantagens dos 2 paradigmas:
+
+|  |  |  |
+|------------------------|------------------------|------------------------|
+| **Característica** | **Programas Compilados** | **Programas Interpretados** |
+| **Desempenho** | **Vantagem:** Muito rápidos, pois o código já está em linguagem de máquina otimizado. | **Desvantagem:** Mais lentos, devido ao "overhead" de traduzir o código enquanto ele executa. |
+| **Portabilidade** | **Desvantagem:** O binário é gerado para um sistema específico (ex: um app de Windows não roda no Linux). | **Vantagem:** O código roda em qualquer sistema que tenha o interpretador instalado. |
+| **Desenvolvimento** | **Desvantagem:** O ciclo é mais lento, pois toda mudança exige uma nova compilação total. | **Vantagem:** Testes rápidos. Você altera uma linha e roda o programa instantaneamente. |
+| **Privacidade** | **Vantagem:** O código-fonte original fica protegido, pois você distribui apenas o binário. | **Desvantagem:** Geralmente o código-fonte precisa ser distribuído ou é facilmente legível. |
+| **Depuração (Debug)** | **Complexo:** Erros podem ser difíceis de rastrear após a compilação. | **Simples:** O interpretador aponta exatamente a linha que falhou durante a execução. |
+| **Uso de Memória** | **Vantagem:** Consomem menos memória, pois não precisam de um tradutor rodando junto. | **Desvantagem:** Consomem mais recursos por manterem o interpretador ativo na memória. |
+
+## Início de Desenvolvimento: Operações básicas de linguagens de alto-nível
+
+| Operação | Analogia Humana      | Função Principal                           |
+|----------------|------------------|--------------------------------------|
+| Escrever | Falar / Mostrar      | Exibir informações para o usuário.         |
+| Ler      | Ouvir / Observar     | Obter dados externos para o sistema.       |
+| Decidir  | Escolher um caminho  | Criar bifurcações lógicas no fluxo.        |
+| Repetir  | Rotina de exercícios | Automatizar tarefas cíclicas e exaustivas. |
+| Funções  | Receita de bolo      | Agrupar comandos para reutilização.        |
+
+### Escrever na tela (Saída de Dados)
+
+![](media/05-escrever_na_tela.jpg)
+
+É a forma como o programa se comunica com o usuário. Ele "cospe" informações processadas ou mensagens de instrução para que possamos ver o que está acontecendo.
+
+-   **Comando comum:** `print()`, `console.log()` ou `escreva()`.
+
+-   **Exemplo:** Exibir o resultado de uma soma ou um simples "Olá, Mundo!".
+
+### Ler do Teclado (Entrada de Dados)
+
+![](images/clipboard-4014759275.png)
+
+É o oposto da escrita. Aqui, o programa "ouve" o usuário. Ele interrompe a execução e espera que você digite algo para salvar essa informação em uma **variável**.
+
+-   **Comando comum:** `input()`, `scanf()` ou `leia()`.
+
+### Repetir Operações (Laços de Repetição)
+
+![](media/07-repetir_comando.jpg)
+
+Computadores são ótimos em fazer tarefas repetitivas sem reclamar. Em vez de escrever o mesmo código dez vezes, usamos um laço (loop) que executa o bloco de comandos enquanto uma condição for mantida.
+
+-   **Tipos comuns:** `while` (enquanto) e `for` (para).
+
+-   **Exemplo:** Listar todos os nomes de uma lista de contatos ou repetir um alerta até que o usuário clique em "OK".
+
+### Decidir (Estruturas Condicionais )
+
+![](media/08-decidir_condicao.jpg)
+
+A inteligência de um código nasce aqui. Essa operação permite que o programa tome caminhos diferentes baseando-se em uma condição lógica (verdadeira ou falsa).
+
+-   **Lógica:** **SE** (condição) então faça A; **SENÃO**, faça B.
+
+-   **Exemplo:** Se a nota for maior que 7, o aluno está "Aprovado"; caso contrário, "Reprovado".
+
+### Procedimentos e Funções (Modularização)
+
+![](media/09-modularizacao_funcoes.jpg)
+
+Imagine que você precisa calcular o imposto de renda em vários lugares do seu código. Em vez de repetir a fórmula toda vez, você cria uma "caixinha" com esse cálculo.
+
+-   **Procedimento:** Executa uma tarefa, mas não devolve um valor (ex: limpar a tela).
+
+-   **Função:** Executa um cálculo e **retorna** um resultado para quem a chamou.
+
+-   **Vantagem:** Deixa o código organizado, fácil de ler e evita a repetição desnecessária (princípio DRY - *Don't Repeat Yourself*).
+
+## O que são Algoritmos ?
+
+Algoritmos são uma **quantidade finita de passos** para a resolução de um problema.
+
+|  |  |
+|------------------------------------|------------------------------------|
+| Propriedades: | Descrição: |
+| 1) Algoritmos possuem uma entrada bem definida; | O ponto de partida do processo. |
+| 2) Saída bem definida; | Geram um resultado esperado. |
+| 3) Todas entradas de um conjunto de dados leva necessáriamente a um conjunto correspondente; | São determinísticos. |
+
+### Exemplo-01:
+
+Vamos fazer um algoritmo para *escrever na tela* a mensagem "meu primeiro programa" .
+
+Use pesudo-código:
+
+```{pseudocode,  eval=FALSE, echo=TRUE}
+INÍCIO
+
+    ESCREVER "meu primeiro programa !"
+    
+FIM
+```
+
+### Exemplo-02:
+
+Vamos fazer um algoritmo para *ler do teclado* duas parcelas (dois números), soma-los e *escrever na tela* o resultado.
+
+Use pseudo-código
+
+```{pseudocode,  eval=FALSE, echo=TRUE}
+Início
+
+    Escreva "Digite a primeira parcela: "
+    
+    Leia parcela1
+
+    Escreva "Digite a segunda parcela: "
+    
+    Leia parcela2
+
+    soma ← parcela1 + parcela2
+
+    Escreva "O resultado da soma é: ", soma
+    
+Fim
+```
+
+### Exemplo-03:
+
+Vamos fazer um algoritmo para ***ler do teclado*** um número, e ***escrever na tela*** este numero.
+
+**Repita o comando** de **ler do teclado** 5 vezes:
+
+```{pseudocode, eval=FALSE, echo=TRUE}
+Início
+
+    Escreva "Digite um número: "
+    
+    Leia variavel_numero
+
+    variavel_contador ← 1
+    
+    Enquanto ( variavel_contador <= 5 ) faça
+    
+        Escreva variavel_numero
+        
+        variavel_contador ← ( variavel_contador + 1 )
+        
+    FimEnquanto
+    
+Fim
+```
+
+### Exemplo-04:
+
+Escreva um pseudo-código para ler dois números do teclado. Decida qual dos dois números é maios e escreva na tela qual dos números é maior.
+
+```{pseudocode,  eval=FALSE, echo=TRUE}
+Início
+    Escreva "Digite o primeiro número: "
+    Leia numero1
+
+    Escreva "Digite o segundo número: "
+    Leia numero2
+
+    Se numero1 > numero2 então
+        Escreva "O maior número é: ", numero1
+    Senão
+        Se numero2 > numero1 então
+            Escreva "O maior número é: ", numero2
+        Senão
+            Escreva "Os dois números são iguais."
+        FimSe
+    FimSe
+Fim
+```
+
+### Exemplo-05:
+
+Escreva um pseudo-código para desenhar na tela uma moldura envolvendo outro comando de escrever na tela "meu quinto programa". Transforme essa moldura em uma função (ou procedimento).
+
+```{pseudocode,  eval=FALSE, echo=TRUE}
+Início
+
+Procedimento MostrarMoldura()
+    Escreva "****************************"
+    Escreva "*   meu quinto programa    *"
+    Escreva "****************************"
+FimProcedimento
+
+    MostrarMoldura()
+
+Fim
+```
+
+## Executando os Algoritmos Através de uma Linguagem: PYTHON
+
+### Exemplo-06:
+
+Vamos fazer um algoritmo para ***escrever na tela*** a mensagem "meu primeiro programa" .
+
+Use a **linguagem PYTHON**:
+
+```{python exemplo-06, echo=TRUE}
+
+print("meu primeiro programa !")
+
+```
+
+### Exemplo-07:
+
+Vamos fazer um algoritmo para *ler do teclado* duas parcelas (dois números), soma-los e *escrever na tela* o resultado.
+
+Use a **linguagem PYTHON**:
+
+```{python exemplo-07-parte1, eval=FALSE, echo=TRUE}
+
+parcela1 = input("Digite a primeira parcela: ")
+parcela2 = input("Digite a segunda  parcela: ")
+
+soma = parcela1 + parcela2
+
+print("O resultado da soma é:", soma)
+
+```
+
+Veja o código a seguir, quase igual ao anterior
+
+```{python exemplo-07-parte2,  eval=FALSE, echo=TRUE}
+
+parcela1 = float(input("Digite a primeira parcela: "))
+parcela2 = float(input("Digite a segunda  parcela: "))
+
+soma = parcela1 + parcela2
+
+print("O resultado da soma é:", soma)
+
+```
+
+### Exemplo-08:
+
+Vamos fazer um algoritmo para ***ler do teclado*** um número, e ***escrever na tela*** este numero.
+
+**Repita o comando** de **ler do teclado** 5 vezes:
+
+Use a **linguagem PYTHON**:
+
+```{python exemplo-08,  eval=FALSE, echo=TRUE}
+
+variavel_numero = input("Digite um número: ")
+
+variavel_contador = 1
+
+while variavel_contador <= 5:
+    print(variavel_numero)
+    variavel_contador = variavel_contador + 1
+
+
+
+```
+
+### Exemplo-09:
+
+Escreva um pseudo-código para ler dois números do teclado. Decida qual dos dois números é maios e escreva na tela qual dos números é maior.
+
+Use a **linguagem PYTHON**:
+
+```{python exemplo-09,  eval=FALSE, echo=TRUE}
+
+print("Digite o primeiro número:")
+numero1 = float(input())
+
+print("Digite o segundo número:")
+numero2 = float(input())
+
+if numero1 > numero2:
+    print("O maior número é:", numero1)
+else:
+    if numero2 > numero1:
+        print("O maior número é:", numero2)
+    else:
+        print("Os dois números são iguais.")
+
+
+```
+
+## Executando os Algoritmos Através de uma Linguagem: C
+
+### Exemplo-10:
+
+Vamos fazer um algoritmo para ***escrever na tela*** a mensagem "meu primeiro programa" .
+
+Use a **linguagem C**:
+
+```{c exemplo-10,  eval=FALSE, echo=TRUE}
+
+#include <stdio.h>
+
+int main() 
+{
+    printf("meu primeiro programa !\n");
+    return 0;
+}
+
+```
+
+### Exemplo-11:
+
+Vamos fazer um algoritmo para *ler do teclado* duas strings (dois textos), 
+concatena-los e *escrever na tela* o resultado.
+
+Use a **linguagem C**:
+
+```{c exemplo-11-parte1,  eval=FALSE, echo=TRUE}
+
+#include <stdio.h>
+#include <string.h>
+
+int main() 
+{
+// Criando as variáveis
+    char texto1[100];
+    char texto2[100];
+    char texto_final[200];
+
+// 2. Leitura da primeira string
+    printf("Digite a primeira string: ");
+    scanf("%s", texto1);
+
+// 3. Leitura da segunda string
+    printf("Digite a segunda string: ");
+    scanf("%s", texto2);
+
+
+// 4. Processamento (concatenação)
+    
+    // copia texto1 para texto_final
+    strcpy(texto_final, texto1);   
+
+    // adiciona texto2 ao final
+    strcat(texto_final, texto2);   
+
+// 5. Saída
+    printf("A soma dos textos lidos eh: %s\n", texto_final);
+
+    return 0;
+}
+
+
+```
+
+Veja o código a seguir, quase igual ao anterior
+
+Vamos fazer um algoritmo para *ler do teclado* duas parcelas (dois números), 
+soma-los e *escrever na tela* o resultado.
+
+```{c exemplo-11-parte2,  eval=FALSE, echo=TRUE}
+
+#include <stdio.h>
+
+int main() 
+{
+    // Definindo as "caixas" na memória para números reais
+    float parcela1, parcela2, soma;
+
+    // Entrada da primeira parcela
+    printf("Digite a primeira parcela: ");
+    scanf("%f", &parcela1); 
+
+    // Entrada da segunda parcela
+    printf("Digite a segunda parcela: ");
+    scanf("%f", &parcela2);
+
+    // Processamento
+    soma = parcela1 + parcela2;
+
+    // Saída dos dados
+    // O %.2f limita o resultado a 2 casas após a vírgula
+    printf("O resultado da soma é: %.2f\n", soma);
+
+    return 0;
+}
+
+```
+
+### Exemplo-12:
+
+Vamos fazer um algoritmo para ***ler do teclado*** um número, e ***escrever na tela*** este numero.
+
+**Repita o comando** de **ler do teclado** 5 vezes:
+
+Use a **linguagem C**:
+
+```{c exemplo-12,  eval=FALSE, echo=TRUE}
+
+#include <stdio.h>
+
+int main() 
+{
+  // 1. Declaração das variáveis
+  int variavel_numero;
+  int variavel_contador = 1;
+
+    // 2. Entrada de dados
+  printf("Digite um numero: ");
+  scanf("%d", &variavel_numero);
+
+  // 3. Estrutura de repetição (While)
+  // No C, a condição DEVE estar entre parênteses ()
+  while (variavel_contador <= 5)
+  {
+        // O que estiver dentro das chaves {} será repetido
+        printf("%d\n", variavel_numero);
+        
+        // Incremento do contador
+        variavel_contador = variavel_contador + 1;
+  }
+
+  return 0;
+}
+
+```
+
+### Exemplo-13:
+
+Escreva um pseudo-código para ler dois números do teclado. Decida qual dos dois números é maios e escreva na tela qual dos números é maior.
+
+Use a **linguagem C**:
+
+```{python exemplo-13,  eval=FALSE, echo=TRUE}
+
+#include <stdio.h>
+
+int main() 
+{
+    float numero1, numero2;
+
+    // Entrada do primeiro número
+    printf("Digite o primeiro numero:\n");
+    scanf("%f", &numero1);
+
+    // Entrada do segundo número
+    printf("Digite o segundo numero:\n");
+    scanf("%f", &numero2);
+
+    // Estrutura de Decisão
+    if (numero1 > numero2)
+    {
+        printf("O maior numero e: %.2f\n", numero1);
+    } 
+    else 
+    if (numero2 > numero1) 
+    {
+        printf("O maior numero e: %.2f\n", numero2);
+    } 
+    else 
+    {
+        printf("Os dois numeros sao iguais.\n");
+    }
+
+    return 0;
+}
+
+```
+
+## Executando os Algoritmos Através de uma Linguagem: JAVA
+
+### Exemplo-14:
+
+Vamos fazer um algoritmo para ***escrever na tela*** a mensagem "meu primeiro programa" .
+
+Use a **linguagem JAVA**:
+
+```{c exemplo-14,  eval=FALSE, echo=TRUE}
+
+public class PrimeiroPrograma 
+{
+    public static void main(String[] args) 
+    {
+      // No Java, usamos System.out.println para imprimir e pular linha
+      System.out.println("meu primeiro programa !");
+    }
+}
+
+```
+
+### Exemplo-15:
+
+Vamos fazer um algoritmo para *ler do teclado* duas parcelas (dois números), soma-los e *escrever na tela* o resultado.
+
+Use a **linguagem JAVA**:
+
+```{c exemplo-15-parte1,  eval=FALSE, echo=TRUE}
+
+import java.util.Scanner; // Importa a ferramenta de leitura
+
+public class ConcatenarParcelas 
+{
+    public static void main(String[] args)
+    {
+        Scanner leitor = new Scanner(System.in);
+
+        // No Java, precisamos declarar que as variáveis são do tipo String
+        System.out.print("Digite a primeira parcela: ");
+        String parcela1 = leitor.nextLine();
+
+        System.out.print("Digite a segunda parcela: ");
+        String parcela2 = leitor.nextLine();
+
+        // O sinal de + entre Strings junta os textos (concatenação)
+        String soma = parcela1 + parcela2;
+
+        System.out.println("O resultado da soma é: " + soma);
+
+        leitor.close();
+    }
+}
+
+```
+
+Veja o código a seguir, quase igual ao anterior
+
+```{c exemplo-15-parte2,  eval=FALSE, echo=TRUE}
+
+import java.util.Scanner; // Importa a biblioteca para leitura de dados
+
+public class SomaReais
+{
+    public static void main(String[] args)
+    {
+        // Criamos um objeto Scanner para ler a entrada do teclado
+        Scanner leitor = new Scanner(System.in);
+
+        // Definindo as variáveis para números reais
+        float parcela1, parcela2, soma;
+
+        // Entrada da primeira parcela
+        System.out.print("Digite a primeira parcela: ");
+        parcela1 = leitor.nextFloat(); 
+
+        // Entrada da segunda parcela
+        System.out.print("Digite a segunda parcela: ");
+        parcela2 = leitor.nextFloat();
+
+        // Processamento
+        soma = parcela1 + parcela2;
+
+        // Saída dos dados
+        // O Java também aceita o printf igualzinho ao C!
+        System.out.printf("O resultado da soma é: %.2f\n", soma);
+
+        // Fechamos o leitor por boa prática
+        leitor.close();
+    }
+}
+
+```
+
+### Exemplo-16:
+
+Vamos fazer um algoritmo para ***ler do teclado*** um número, e ***escrever na tela*** este numero.
+
+**Repita o comando** de **ler do teclado** 5 vezes:
+
+Use a **linguagem JAVA**:
+
+```{c exemplo-16,  eval=FALSE, echo=TRUE}
+
+import java.util.Scanner; // Importa a classe Scanner para leitura de dados
+
+public class RepeticaoWhile
+{
+    public static void main(String[] args)
+    {
+        // Criamos o objeto leitor para o teclado
+        Scanner leitor = new Scanner(System.in);
+
+        // 1. Declaração das variáveis
+        int variavelNumero;
+        int variavelContador = 1;
+
+        // 2. Entrada de dados
+        System.out.print("Digite um numero: ");
+        variavelNumero = leitor.nextInt(); // Lê um número inteiro
+
+        // 3. Estrutura de repetição (While)
+        // Assim como no C, a condição fica entre parênteses ()
+        while (variavelContador <= 5)
+        {
+            // No Java, o println já pula linha automaticamente
+            System.out.println(variavelNumero);
+            
+            // Incremento do contador
+            variavelContador = variavelContador + 1;
+        }
+
+        // Fechar o leitor por boa prática
+        leitor.close();
+    }
+}
+
+```
+
+### Exemplo-17:
+
+Escreva um pseudo-código para ler dois números do teclado. Decida qual dos dois números é maios e escreva na tela qual dos números é maior.
+
+Use a **linguagem JAVA**:
+
+```{python exemplo-17,  eval=FALSE, echo=TRUE}
+
+import java.util.Scanner;
+
+public class CompararNumeros
+{
+    public static void main(String[] args)
+    {
+        Scanner leitor = new Scanner(System.in);
+        float numero1, numero2;
+
+        // Entrada do primeiro número
+        System.out.println("Digite o primeiro numero:");
+        numero1 = leitor.nextFloat();
+
+        // Entrada do segundo número
+        System.out.println("Digite o segundo numero:");
+        numero2 = leitor.nextFloat();
+
+        // Estrutura de Decisão
+        if (numero1 > numero2)
+        {
+            System.out.printf("O maior numero e: %.2f\n", numero1);
+        } 
+        else if (numero2 > numero1) {
+            System.out.printf("O maior numero e: %.2f\n", numero2);
+        } 
+        else
+        {
+            System.out.println("Os dois numeros sao iguais.");
+        }
+
+        leitor.close();
+    }
+}
+
+```
+
+### Ferramentas:
+
+#### Instalar o Microsoft Build Tools VS2022
+
+``` cmd
+winget install --id=Microsoft.VisualStudio.2022.BuildTools -e
+```
 
 ```{r introducao-logica-programacao-01, eval=FALSE, include=FALSE}
 rmarkdown::render("02-2026-03-04_Introducao_Logica_Programacao-01.Rmd", output_dir="docs", output_file ="temporario.html" , output_format = "html_document") ; utils::browseURL("docs/temporario.html")
+```
+
+```{r introducao-logica-programacao-02, eval=FALSE, include=FALSE}
+rmarkdown::render("02-2026-03-04_Introducao_Logica_Programacao-01.Rmd", output_dir="docs", output_file ="temporario.docx" , output_format = "word_document") ; utils::browseURL("docs/temporario.docx")
 ```

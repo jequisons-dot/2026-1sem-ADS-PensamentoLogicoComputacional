@@ -1,9 +1,3 @@
----
-output: 
-  html_document: 
-    highlight: tango
-    theme: cerulean
----
 ## Exercícios de Introdução a Lógica de Programação
 
 ```{r introducao-logica-programacao-01-exercicios, eval=FALSE, include=FALSE}

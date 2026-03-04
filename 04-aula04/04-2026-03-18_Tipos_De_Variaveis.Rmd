@@ -1,9 +1,3 @@
----
-output: 
-  html_document: 
-    highlight: tango
-    theme: cerulean
----
 # Tipos de Variáveis
 
 

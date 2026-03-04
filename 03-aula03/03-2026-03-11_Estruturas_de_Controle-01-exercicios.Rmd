@@ -1,9 +1,3 @@
----
-output: 
-  html_document: 
-    highlight: tango
-    theme: cerulean
----
 ## Exercícios de Estruturas de Controle - Repetição e Decisão
 
 ```{r 03-estrutura-controle-repeticao-exercicios, eval=FALSE, include=FALSE}

@@ -15,14 +15,19 @@ rmd_files: [
     "06-aula06/06-2026-04-08_Listas_e_Dicionarios-exercicios.Rmd",
     "06-aula06/06-2026-04-08_Listas_e_Dicionarios.Rmd",
     "07-aula07/07-2026-04-15_Entrada_e_Saida-exercicios.Rmd",
+    "07-aula07/07-2026-04-15_Entrada_e_Saida.Rmd",
     "08-aula08/08-2026-04-22_Depuracao_e_Teste_Algoritmos-exercicios.Rmd",
     "08-aula08/08-2026-04-22_Depuracao_e_Teste_Algoritmos.Rmd",
     "09-aula09/09-2026-04-29_Programacao_OO-parte1-exercicios.Rmd",
     "09-aula09/09-2026-04-29_Programacao_OO-parte1.Rmd",
     "10-aula10/10-2026-05-06_Programacao_OO-parte2-exercicios.Rmd",
-    "11-aula11/11-2026-05-13_Programacao_Orientada_Eventos1.Rmd"
+    "10-aula10/10-2026-05-06_Programacao_OO-parte2.Rmd",
+    "11-aula11/11-2026-05-13_Programacao_Orientada_Eventos1.Rmd",
+    "11-aula11/11-2026-05-13_Programacao_Orientada_Eventos1exercicios.Rmd"
 ]
 
 language:
   ui:
     chapter_name: "Aula "
+
+
