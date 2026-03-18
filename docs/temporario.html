@@ -11,7 +11,7 @@
 
 
 
-<title>02-2026-03-04_Introducao_Logica_Programacao-01.knit</title>
+<title>03-2026-03-11_Estruturas_de_Controle-01-exercicios.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -352,735 +352,218 @@ display: none;
 </div>
 
 
-<div id="introdução-a-lógica-de-programação" class="section level1">
-<h1>Introdução a Lógica de Programação</h1>
-<p><img role="img" src="images/apresentacao_aula_02_qr-code.png" /></p>
-<div id="programas-compilados" class="section level2">
-<h2>Programas Compilados</h2>
-<p>Em uma linguagem compilada, existe um passo prévio chamado
-<strong>compilação</strong>. Um programa especial (o compilador) lê todo
-o código-fonte de uma vez, verifica erros e o traduz integralmente em um
-arquivo binário executável (como um <code>.exe</code> no Windows).</p>
-<div id="linguagem-cc" class="section level3">
-<h3>Linguagem C/C++</h3>
-<p><img role="img" src="media/01-programas_compilados.jpg" /></p>
+<div id="exercícios-de-estruturas-de-controle---repetição-e-decisão" class="section level2">
+<h2>Exercícios de Estruturas de Controle - Repetição e Decisão</h2>
 </div>
-<div id="linguagem-java" class="section level3">
-<h3>Linguagem JAVA</h3>
-<p><img role="img" src="media/02-programas_compilados-java.jpg" /></p>
-</div>
-</div>
-<div id="programas-interpretados" class="section level2">
-<h2>Programas Interpretados</h2>
-<p>Em uma linguagem interpretada, o código não é transformado em um
-arquivo binário antes da execução. Em vez disso, um programa chamado
-<strong>interpretador</strong> lê o código-fonte e o executa linha por
-linha, em tempo real.</p>
-<div id="linguagem-python" class="section level3">
-<h3>Linguagem PYTHON</h3>
-<p><img role="img" src="media/03-programas_interpretados-python.jpg" /></p>
-</div>
-<div id="linguagem-javascript" class="section level3">
-<h3>Linguagem JAVASCRIPT</h3>
-<p><img role="img" src="media/04-programas_interpretados-javascript.jpg" /></p>
-<p>Resumo das vantagens e desvantagens dos 2 paradigmas:</p>
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Característica</strong></td>
-<td><strong>Programas Compilados</strong></td>
-<td><strong>Programas Interpretados</strong></td>
-</tr>
-<tr class="even">
-<td><strong>Desempenho</strong></td>
-<td><strong>Vantagem:</strong> Muito rápidos, pois o código já está em
-linguagem de máquina otimizado.</td>
-<td><strong>Desvantagem:</strong> Mais lentos, devido ao “overhead” de
-traduzir o código enquanto ele executa.</td>
-</tr>
-<tr class="odd">
-<td><strong>Portabilidade</strong></td>
-<td><strong>Desvantagem:</strong> O binário é gerado para um sistema
-específico (ex: um app de Windows não roda no Linux).</td>
-<td><strong>Vantagem:</strong> O código roda em qualquer sistema que
-tenha o interpretador instalado.</td>
-</tr>
-<tr class="even">
-<td><strong>Desenvolvimento</strong></td>
-<td><strong>Desvantagem:</strong> O ciclo é mais lento, pois toda
-mudança exige uma nova compilação total.</td>
-<td><strong>Vantagem:</strong> Testes rápidos. Você altera uma linha e
-roda o programa instantaneamente.</td>
-</tr>
-<tr class="odd">
-<td><strong>Privacidade</strong></td>
-<td><strong>Vantagem:</strong> O código-fonte original fica protegido,
-pois você distribui apenas o binário.</td>
-<td><strong>Desvantagem:</strong> Geralmente o código-fonte precisa ser
-distribuído ou é facilmente legível.</td>
-</tr>
-<tr class="even">
-<td><strong>Depuração (Debug)</strong></td>
-<td><strong>Complexo:</strong> Erros podem ser difíceis de rastrear após
-a compilação.</td>
-<td><strong>Simples:</strong> O interpretador aponta exatamente a linha
-que falhou durante a execução.</td>
-</tr>
-<tr class="odd">
-<td><strong>Uso de Memória</strong></td>
-<td><strong>Vantagem:</strong> Consomem menos memória, pois não precisam
-de um tradutor rodando junto.</td>
-<td><strong>Desvantagem:</strong> Consomem mais recursos por manterem o
-interpretador ativo na memória.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="início-de-desenvolvimento-operações-básicas-de-linguagens-de-alto-nível" class="section level2">
-<h2>Início de Desenvolvimento: Operações básicas de linguagens de
-alto-nível</h2>
-<table>
-<colgroup>
-<col width="24%" />
-<col width="24%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Operação</th>
-<th>Analogia Humana</th>
-<th>Função Principal</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Escrever</td>
-<td>Falar / Mostrar</td>
-<td>Exibir informações para o usuário.</td>
-</tr>
-<tr class="even">
-<td>Ler</td>
-<td>Ouvir / Observar</td>
-<td>Obter dados externos para o sistema.</td>
-</tr>
-<tr class="odd">
-<td>Decidir</td>
-<td>Escolher um caminho</td>
-<td>Criar bifurcações lógicas no fluxo.</td>
-</tr>
-<tr class="even">
-<td>Repetir</td>
-<td>Rotina de exercícios</td>
-<td>Automatizar tarefas cíclicas e exaustivas.</td>
-</tr>
-<tr class="odd">
-<td>Funções</td>
-<td>Receita de bolo</td>
-<td>Agrupar comandos para reutilização.</td>
-</tr>
-</tbody>
-</table>
-<div id="escrever-na-tela-saída-de-dados" class="section level3">
-<h3>Escrever na tela (Saída de Dados)</h3>
-<p><img role="img" src="media/05-escrever_na_tela.jpg" /></p>
-<p>É a forma como o programa se comunica com o usuário. Ele “cospe”
-informações processadas ou mensagens de instrução para que possamos ver
-o que está acontecendo.</p>
-<ul>
-<li><p><strong>Comando comum:</strong> <code>print()</code>,
-<code>console.log()</code> ou <code>escreva()</code>.</p></li>
-<li><p><strong>Exemplo:</strong> Exibir o resultado de uma soma ou um
-simples “Olá, Mundo!”.</p></li>
-</ul>
-</div>
-<div id="ler-do-teclado-entrada-de-dados" class="section level3">
-<h3>Ler do Teclado (Entrada de Dados)</h3>
-<p><img role="img" src="images/clipboard-4014759275.png" /></p>
-<p>É o oposto da escrita. Aqui, o programa “ouve” o usuário. Ele
-interrompe a execução e espera que você digite algo para salvar essa
-informação em uma <strong>variável</strong>.</p>
-<ul>
-<li><strong>Comando comum:</strong> <code>input()</code>,
-<code>scanf()</code> ou <code>leia()</code>.</li>
-</ul>
-</div>
-<div id="repetir-operações-laços-de-repetição" class="section level3">
-<h3>Repetir Operações (Laços de Repetição)</h3>
-<p><img role="img" src="media/07-repetir_comando.jpg" /></p>
-<p>Computadores são ótimos em fazer tarefas repetitivas sem reclamar. Em
-vez de escrever o mesmo código dez vezes, usamos um laço (loop) que
-executa o bloco de comandos enquanto uma condição for mantida.</p>
-<ul>
-<li><p><strong>Tipos comuns:</strong> <code>while</code> (enquanto) e
-<code>for</code> (para).</p></li>
-<li><p><strong>Exemplo:</strong> Listar todos os nomes de uma lista de
-contatos ou repetir um alerta até que o usuário clique em “OK”.</p></li>
-</ul>
-</div>
-<div id="decidir-estruturas-condicionais" class="section level3">
-<h3>Decidir (Estruturas Condicionais )</h3>
-<p><img role="img" src="media/08-decidir_condicao.jpg" /></p>
-<p>A inteligência de um código nasce aqui. Essa operação permite que o
-programa tome caminhos diferentes baseando-se em uma condição lógica
-(verdadeira ou falsa).</p>
-<ul>
-<li><p><strong>Lógica:</strong> <strong>SE</strong> (condição) então
-faça A; <strong>SENÃO</strong>, faça B.</p></li>
-<li><p><strong>Exemplo:</strong> Se a nota for maior que 7, o aluno está
-“Aprovado”; caso contrário, “Reprovado”.</p></li>
-</ul>
-</div>
-<div id="procedimentos-e-funções-modularização" class="section level3">
-<h3>Procedimentos e Funções (Modularização)</h3>
-<p><img role="img" src="media/09-modularizacao_funcoes.jpg" /></p>
-<p>Imagine que você precisa calcular o imposto de renda em vários
-lugares do seu código. Em vez de repetir a fórmula toda vez, você cria
-uma “caixinha” com esse cálculo.</p>
-<ul>
-<li><p><strong>Procedimento:</strong> Executa uma tarefa, mas não
-devolve um valor (ex: limpar a tela).</p></li>
-<li><p><strong>Função:</strong> Executa um cálculo e
-<strong>retorna</strong> um resultado para quem a chamou.</p></li>
-<li><p><strong>Vantagem:</strong> Deixa o código organizado, fácil de
-ler e evita a repetição desnecessária (princípio DRY - <em>Don’t Repeat
-Yourself</em>).</p></li>
-</ul>
-</div>
-</div>
-<div id="o-que-são-algoritmos" class="section level2">
-<h2>O que são Algoritmos ?</h2>
-<p>Algoritmos são uma <strong>quantidade finita de passos</strong> para
-a resolução de um problema.</p>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Propriedades:</td>
-<td>Descrição:</td>
-</tr>
-<tr class="even">
-<td>1) Algoritmos possuem uma entrada bem definida;</td>
-<td>O ponto de partida do processo.</td>
-</tr>
-<tr class="odd">
-<td>2) Saída bem definida;</td>
-<td>Geram um resultado esperado.</td>
-</tr>
-<tr class="even">
-<td>3) Todas entradas de um conjunto de dados leva necessáriamente a um
-conjunto correspondente;</td>
-<td>São determinísticos.</td>
-</tr>
-</tbody>
-</table>
-<div id="exemplo-01" class="section level3">
-<h3>Exemplo-01:</h3>
-<p>Vamos fazer um algoritmo para <em>escrever na tela</em> a mensagem
-“meu primeiro programa” .</p>
-<p>Use pesudo-código:</p>
-<pre class="pseudocode"><code>INÍCIO
+<div id="exercícios-de-estruturas-de-repeitção" class="section level2">
+<h2>Exercícios de Estruturas de Repeitção:</h2>
+<p><a href="03-aula03/exercicios/parte-01-Estrutura-Repeticao/exercicio-1-exemplo/exemplo1.txt">Exemplo
+1</a></p>
+<div id="exercício-1" class="section level4">
+<h4>Exercício 1</h4>
+<pre class="pseudocode"><code>Exercício 1) Escreva na tela todas as frutas existentes na variável do tipo &quot;lista&quot;.
 
-    ESCREVER &quot;meu primeiro programa !&quot;
+A variável do tipo lista contém [&quot;Maçã&quot;, &quot;Banana&quot;, &quot;Uva&quot;]</code></pre>
+</div>
+<div id="código-exemplo-1" class="section level4">
+<h4>Código exemplo 1</h4>
+<pre class="python"><code>#!/usr/bin/python
+
+
+frutas = [&quot;Maçã&quot;, &quot;Banana&quot;, &quot;Uva&quot;]
+for fruta in frutas:
+    print(f&quot;Eu gosto de {fruta}&quot;)</code></pre>
+<p><a href="03-aula03/exercicios/parte-01-Estrutura-Repeticao/exercicio-2/exercicio2-enunciado.txt">Exercício
+2</a></p>
+</div>
+<div id="exercício-2" class="section level4">
+<h4>Exercício 2</h4>
+<pre class="pseudocode"><code>Exercício 2) Utilize um laço for para imprimir todos os números de 10 até 100, mas pulando de 10 em 10 (ex: 10, 20, 30...).</code></pre>
+</div>
+<div id="código-exercício-2" class="section level4">
+<h4>Código exercício 2</h4>
+<pre class="python"><code>
+# O range começa em 10, vai até 101 (para incluir o 100) e pula de 10 em 10
+
+for numero in range(10, 101, 10):
+    print(numero)
+
+
+
+
+</code></pre>
+<p><a href="03-aula03/exercicios/parte-01-Estrutura-Repeticao/exercicio-3/exercicio3-enunciado.txt">Exercício
+3</a></p>
+</div>
+<div id="exercício-3" class="section level4">
+<h4>Exercício 3</h4>
+<pre class="pseudocode"><code>Exercício 3) Aplicar uma operação matemática simples dentro de cada iteração.
+
+Peça ao usuário para digitar um número inteiro. 
+Use um laço for para exibir a tabuada desse número de 1 a 10.
+
+Captura de input() fora do loop e cálculo direto (numero * i) dentro do corpo do for</code></pre>
+</div>
+<div id="código-exercício-3" class="section level4">
+<h4>Código exercício 3</h4>
+<pre class="python"><code>
+# 1. Captura do input fora do loop (convertendo para inteiro)
+
+numero = int(input(&quot;Digite um número para ver a tabuada: &quot;))
+
+print(f&quot;\nTabuada do {numero}:&quot;)
+
+# 2. Laço for de 1 a 10 (o range vai até 11 para incluir o 10)
+
+for i in range(1, 11):
     
-FIM</code></pre>
-</div>
-<div id="exemplo-02" class="section level3">
-<h3>Exemplo-02:</h3>
-<p>Vamos fazer um algoritmo para <em>ler do teclado</em> duas parcelas
-(dois números), soma-los e <em>escrever na tela</em> o resultado.</p>
-<p>Use pseudo-código</p>
-<pre class="pseudocode"><code>Início
-
-    Escreva &quot;Digite a primeira parcela: &quot;
+    # 3. Cálculo direto dentro do corpo do for
     
-    Leia parcela1
-
-    Escreva &quot;Digite a segunda parcela: &quot;
-    
-    Leia parcela2
-
-    soma ← parcela1 + parcela2
-
-    Escreva &quot;O resultado da soma é: &quot;, soma
-    
-Fim</code></pre>
+    resultado = numero * i
+    print(f&quot;{numero} x {i} = {resultado}&quot;)</code></pre>
+<p><a href="03-aula03/exercicios/parte-01-Estrutura-Repeticao/exercicio-4/exercicio4-enunciado.txt">Exercício
+4</a></p>
 </div>
-<div id="exemplo-03" class="section level3">
-<h3>Exemplo-03:</h3>
-<p>Vamos fazer um algoritmo para <strong><em>ler do
-teclado</em></strong> um número, e <strong><em>escrever na
-tela</em></strong> este numero.</p>
-<p><strong>Repita o comando</strong> de <strong>ler do teclado</strong>
-5 vezes:</p>
-<pre class="pseudocode"><code>Início
+<div id="exercício-4" class="section level4">
+<h4>Exercício 4</h4>
+<pre class="pseudocode"><code>Aplicar uma operação matemática simples dentro de cada iteração.
 
-    Escreva &quot;Digite um número: &quot;
-    
-    Leia variavel_numero
+Peça ao usuário para digitar um número inteiro. 
+Use um laço for para exibir a tabuada desse número de 1 a 10.
 
-    variavel_contador ← 1
-    
-    Enquanto ( variavel_contador &lt;= 5 ) faça
-    
-        Escreva variavel_numero
-        
-        variavel_contador ← ( variavel_contador + 1 )
-        
-    FimEnquanto
-    
-Fim</code></pre>
+Captura de input() fora do loop e cálculo direto (numero * i) dentro do corpo do for</code></pre>
 </div>
-<div id="exemplo-04" class="section level3">
-<h3>Exemplo-04:</h3>
-<p>Escreva um pseudo-código para ler dois números do teclado. Decida
-qual dos dois números é maios e escreva na tela qual dos números é
-maior.</p>
-<pre class="pseudocode"><code>Início
-    Escreva &quot;Digite o primeiro número: &quot;
-    Leia numero1
+<div id="código-exercício-4" class="section level4">
+<h4>Código exercício 4</h4>
+<pre class="python"><code>
 
-    Escreva &quot;Digite o segundo número: &quot;
-    Leia numero2
 
-    Se numero1 &gt; numero2 então
-        Escreva &quot;O maior número é: &quot;, numero1
-    Senão
-        Se numero2 &gt; numero1 então
-            Escreva &quot;O maior número é: &quot;, numero2
-        Senão
-            Escreva &quot;Os dois números são iguais.&quot;
-        FimSe
-    FimSe
-Fim</code></pre>
-</div>
-<div id="exemplo-05" class="section level3">
-<h3>Exemplo-05:</h3>
-<p>Escreva um pseudo-código para desenhar na tela uma moldura envolvendo
-outro comando de escrever na tela “meu quinto programa”. Transforme essa
-moldura em uma função (ou procedimento).</p>
-<pre class="pseudocode"><code>Início
+# 1. Captura o número fora do loop (apenas uma vez)
 
-Procedimento MostrarMoldura()
-    Escreva &quot;****************************&quot;
-    Escreva &quot;*   meu quinto programa    *&quot;
-    Escreva &quot;****************************&quot;
-FimProcedimento
+numero = int(input(&quot;Digite um número para ver a tabuada: &quot;))
 
-    MostrarMoldura()
+print(f&quot;Tabuada do {numero}:&quot;)
 
-Fim</code></pre>
+# 2. O laço for percorre os números de 1 a 10
+
+for i in range(1, 11):
+
+    # 3. O cálculo é feito diretamente dentro do corpo do laço
+
+    resultado = numero * i
+    print(f&quot;{numero} x {i} = {resultado}&quot;)
+
+
+
+
+
+</code></pre>
 </div>
 </div>
-<div id="executando-os-algoritmos-através-de-uma-linguagem-python" class="section level2">
-<h2>Executando os Algoritmos Através de uma Linguagem: PYTHON</h2>
-<div id="exemplo-06" class="section level3">
-<h3>Exemplo-06:</h3>
-<p>Vamos fazer um algoritmo para <strong><em>escrever na
-tela</em></strong> a mensagem “meu primeiro programa” .</p>
-<p>Use a <strong>linguagem PYTHON</strong>:</p>
-<pre class="python"><code>print(&quot;meu primeiro programa !&quot;)</code></pre>
-<pre><code>## meu primeiro programa !</code></pre>
+<div id="exercícios-de-estruturas-de-controle" class="section level2">
+<h2>Exercícios de Estruturas de Controle:</h2>
+<p><a href="03-aula03/exercicios/parte-02-Estrutura-Controle/exercicio-5-exemplo/exemplo5.txt">Exemplo
+5</a></p>
+<div id="exercício-5" class="section level4">
+<h4>Exercício 5</h4>
+<pre class="pseudocode"><code>Exercício 5) Peça para o usuário digitar a sua idade. Se a idade for 18 ou mais, exiba a mensagem &quot;Acesso Liberado&quot;. Caso contrário, exiba &quot;Acesso Negado&quot;.</code></pre>
 </div>
-<div id="exemplo-07" class="section level3">
-<h3>Exemplo-07:</h3>
-<p>Vamos fazer um algoritmo para <em>ler do teclado</em> duas parcelas
-(dois números), soma-los e <em>escrever na tela</em> o resultado.</p>
-<p>Use a <strong>linguagem PYTHON</strong>:</p>
-<pre class="python"><code>parcela1 = input(&quot;Digite a primeira parcela: &quot;)
-parcela2 = input(&quot;Digite a segunda  parcela: &quot;)
+<div id="código-exemplo-5" class="section level4">
+<h4>Código exemplo 5</h4>
+<pre class="python"><code>#!/usr/bin/python
 
-soma = parcela1 + parcela2
+# Passo 1: Solicita a idade ao usuário
+idade = int(input(&quot;Digite a sua idade: &quot;))
 
-print(&quot;O resultado da soma é:&quot;, soma)</code></pre>
-<p>Veja o código a seguir, quase igual ao anterior</p>
-<pre class="python"><code>parcela1 = float(input(&quot;Digite a primeira parcela: &quot;))
-parcela2 = float(input(&quot;Digite a segunda  parcela: &quot;))
-
-soma = parcela1 + parcela2
-
-print(&quot;O resultado da soma é:&quot;, soma)</code></pre>
-</div>
-<div id="exemplo-08" class="section level3">
-<h3>Exemplo-08:</h3>
-<p>Vamos fazer um algoritmo para <strong><em>ler do
-teclado</em></strong> um número, e <strong><em>escrever na
-tela</em></strong> este numero.</p>
-<p><strong>Repita o comando</strong> de <strong>ler do teclado</strong>
-5 vezes:</p>
-<p>Use a <strong>linguagem PYTHON</strong>:</p>
-<pre class="python"><code>variavel_numero = input(&quot;Digite um número: &quot;)
-
-variavel_contador = 1
-
-while variavel_contador &lt;= 5:
-    print(variavel_numero)
-    variavel_contador = variavel_contador + 1</code></pre>
-</div>
-<div id="exemplo-09" class="section level3">
-<h3>Exemplo-09:</h3>
-<p>Escreva um pseudo-código para ler dois números do teclado. Decida
-qual dos dois números é maios e escreva na tela qual dos números é
-maior.</p>
-<p>Use a <strong>linguagem PYTHON</strong>:</p>
-<pre class="python"><code>print(&quot;Digite o primeiro número:&quot;)
-numero1 = float(input())
-
-print(&quot;Digite o segundo número:&quot;)
-numero2 = float(input())
-
-if numero1 &gt; numero2:
-    print(&quot;O maior número é:&quot;, numero1)
+# Passo 2: Verifica a condição
+if idade &gt;= 18:
+    print(&quot;Acesso Liberado:&quot;)
 else:
-    if numero2 &gt; numero1:
-        print(&quot;O maior número é:&quot;, numero2)
-    else:
-        print(&quot;Os dois números são iguais.&quot;)</code></pre>
+    print(&quot;Acesso Negado !&quot;)</code></pre>
+<p><a href="03-aula03/exercicios/parte-02-Estrutura-Controle/exercicio-6/exercicio6-enunciado.txt">Exercício
+6</a></p>
 </div>
+<div id="exercício-6" class="section level4">
+<h4>Exercício 6</h4>
+<pre class="pseudocode"><code>Exercício 6)  Peça ao usuário um número inteiro. 
+O programa deve informar se esse número é Par ou Ímpar.</code></pre>
 </div>
-<div id="executando-os-algoritmos-através-de-uma-linguagem-c" class="section level2">
-<h2>Executando os Algoritmos Através de uma Linguagem: C</h2>
-<div id="exemplo-10" class="section level3">
-<h3>Exemplo-10:</h3>
-<p>Vamos fazer um algoritmo para <strong><em>escrever na
-tela</em></strong> a mensagem “meu primeiro programa” .</p>
-<p>Use a <strong>linguagem C</strong>:</p>
-<pre class="c"><code>
-#include &lt;stdio.h&gt;
+<div id="código-exercício-6" class="section level4">
+<h4>Código exercício 6</h4>
+<pre class="python"><code>
+# 1. Solicita o número ao usuário e converte para inteiro
 
-int main() 
-{
-    printf(&quot;meu primeiro programa !\n&quot;);
-    return 0;
-}
-</code></pre>
+numero = int(input(&quot;Digite um número inteiro: &quot;))
+
+# 2. Verifica se o resto da divisão por 2 é igual a zero
+if numero % 2 == 0:
+    print(f&quot;O número {numero} é Par.&quot;)
+else:
+    print(f&quot;O número {numero} é Ímpar.&quot;)</code></pre>
+<p><a href="03-aula03/exercicios/parte-02-Estrutura-Controle/exercicio-8/exercicio8-enunciado.txt">Exercício
+7</a></p>
 </div>
-<div id="exemplo-11" class="section level3">
-<h3>Exemplo-11:</h3>
-<p>Vamos fazer um algoritmo para <em>ler do teclado</em> duas strings
-(dois textos), concatena-los e <em>escrever na tela</em> o
-resultado.</p>
-<p>Use a <strong>linguagem C</strong>:</p>
-<pre class="c"><code>
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
+<div id="exercício-7" class="section level4">
+<h4>Exercício 7</h4>
+<pre class="pseudocode"><code>Exercício 7) Receba uma temperatura em graus Celsius e escreva na tela a classificação:
 
-int main() 
-{
-// Criando as variáveis
-    char texto1[100];
-    char texto2[100];
-    char texto_final[200];
+- Menor que 15°C: &quot;Frio&quot;
 
-// 2. Leitura da primeira string
-    printf(&quot;Digite a primeira string: &quot;);
-    scanf(&quot;%s&quot;, texto1);
+- Entre 15°C e 25°C: &quot;Agradável&quot;
 
-// 3. Leitura da segunda string
-    printf(&quot;Digite a segunda string: &quot;);
-    scanf(&quot;%s&quot;, texto2);
-
-
-// 4. Processamento (concatenação)
-    
-    // copia texto1 para texto_final
-    strcpy(texto_final, texto1);   
-
-    // adiciona texto2 ao final
-    strcat(texto_final, texto2);   
-
-// 5. Saída
-    printf(&quot;A soma dos textos lidos eh: %s\n&quot;, texto_final);
-
-    return 0;
-}
-</code></pre>
-<p>Veja o código a seguir, quase igual ao anterior</p>
-<p>Vamos fazer um algoritmo para <em>ler do teclado</em> duas parcelas
-(dois números), soma-los e <em>escrever na tela</em> o resultado.</p>
-<pre class="c"><code>
-#include &lt;stdio.h&gt;
-
-int main() 
-{
-    // Definindo as &quot;caixas&quot; na memória para números reais
-    float parcela1, parcela2, soma;
-
-    // Entrada da primeira parcela
-    printf(&quot;Digite a primeira parcela: &quot;);
-    scanf(&quot;%f&quot;, &amp;parcela1); 
-
-    // Entrada da segunda parcela
-    printf(&quot;Digite a segunda parcela: &quot;);
-    scanf(&quot;%f&quot;, &amp;parcela2);
-
-    // Processamento
-    soma = parcela1 + parcela2;
-
-    // Saída dos dados
-    // O %.2f limita o resultado a 2 casas após a vírgula
-    printf(&quot;O resultado da soma é: %.2f\n&quot;, soma);
-
-    return 0;
-}
-</code></pre>
+- Maior que 25°C: &quot;Quente&quot;</code></pre>
 </div>
-<div id="exemplo-12" class="section level3">
-<h3>Exemplo-12:</h3>
-<p>Vamos fazer um algoritmo para <strong><em>ler do
-teclado</em></strong> um número, e <strong><em>escrever na
-tela</em></strong> este numero.</p>
-<p><strong>Repita o comando</strong> de <strong>ler do teclado</strong>
-5 vezes:</p>
-<p>Use a <strong>linguagem C</strong>:</p>
-<pre class="c"><code>
-#include &lt;stdio.h&gt;
+<div id="código-exercício-7" class="section level4">
+<h4>Código exercício 7</h4>
+<pre class="python"><code>
 
-int main() 
-{
-  // 1. Declaração das variáveis
-  int variavel_numero;
-  int variavel_contador = 1;
+# 1. Recebe a temperatura (float permite números decimais como 22.5)
 
-    // 2. Entrada de dados
-  printf(&quot;Digite um numero: &quot;);
-  scanf(&quot;%d&quot;, &amp;variavel_numero);
+temperatura = float(input(&quot;Digite a temperatura em graus Celsius: &quot;))
 
-  // 3. Estrutura de repetição (While)
-  // No C, a condição DEVE estar entre parênteses ()
-  while (variavel_contador &lt;= 5)
-  {
-        // O que estiver dentro das chaves {} será repetido
-        printf(&quot;%d\n&quot;, variavel_numero);
-        
-        // Incremento do contador
-        variavel_contador = variavel_contador + 1;
-  }
+# 2. Verifica as faixas de classificação
 
-  return 0;
-}
-</code></pre>
+if temperatura &lt; 15:
+    print(&quot;Frio&quot;)
+elif temperatura &lt;= 25:
+    print(&quot;Agradável&quot;)
+else:
+    print(&quot;Quente&quot;)</code></pre>
+<p><a href="03-aula03/exercicios/parte-02-Estrutura-Controle/exercicio-7/exercicio7-enunciado.txt">Exercício
+8</a></p>
 </div>
-<div id="exemplo-13" class="section level3">
-<h3>Exemplo-13:</h3>
-<p>Escreva um pseudo-código para ler dois números do teclado. Decida
-qual dos dois números é maios e escreva na tela qual dos números é
-maior.</p>
-<p>Use a <strong>linguagem C</strong>:</p>
-<pre class="python"><code>#include &lt;stdio.h&gt;
-
-int main() 
-{
-    float numero1, numero2;
-
-    // Entrada do primeiro número
-    printf(&quot;Digite o primeiro numero:\n&quot;);
-    scanf(&quot;%f&quot;, &amp;numero1);
-
-    // Entrada do segundo número
-    printf(&quot;Digite o segundo numero:\n&quot;);
-    scanf(&quot;%f&quot;, &amp;numero2);
-
-    // Estrutura de Decisão
-    if (numero1 &gt; numero2)
-    {
-        printf(&quot;O maior numero e: %.2f\n&quot;, numero1);
-    } 
-    else 
-    if (numero2 &gt; numero1) 
-    {
-        printf(&quot;O maior numero e: %.2f\n&quot;, numero2);
-    } 
-    else 
-    {
-        printf(&quot;Os dois numeros sao iguais.\n&quot;);
-    }
-
-    return 0;
-}</code></pre>
+<div id="exercício-8" class="section level4">
+<h4>Exercício 8</h4>
+<pre class="pseudocode"><code>Exercício 8) Um produto custa R$ 100,00. 
+Se o cliente comprar 10 unidades ou mais, ele ganha 10% de desconto no valor total. 
+Se comprar menos, paga o valor integral. 
+Calcule e mostre o valor final da compra.</code></pre>
 </div>
-</div>
-<div id="executando-os-algoritmos-através-de-uma-linguagem-java" class="section level2">
-<h2>Executando os Algoritmos Através de uma Linguagem: JAVA</h2>
-<div id="exemplo-14" class="section level3">
-<h3>Exemplo-14:</h3>
-<p>Vamos fazer um algoritmo para <strong><em>escrever na
-tela</em></strong> a mensagem “meu primeiro programa” .</p>
-<p>Use a <strong>linguagem JAVA</strong>:</p>
-<pre class="c"><code>
-public class PrimeiroPrograma 
-{
-    public static void main(String[] args) 
-    {
-      // No Java, usamos System.out.println para imprimir e pular linha
-      System.out.println(&quot;meu primeiro programa !&quot;);
-    }
-}
-</code></pre>
-</div>
-<div id="exemplo-15" class="section level3">
-<h3>Exemplo-15:</h3>
-<p>Vamos fazer um algoritmo para <em>ler do teclado</em> duas parcelas
-(dois números), soma-los e <em>escrever na tela</em> o resultado.</p>
-<p>Use a <strong>linguagem JAVA</strong>:</p>
-<pre class="c"><code>
-import java.util.Scanner; // Importa a ferramenta de leitura
+<div id="código-exercício-8" class="section level4">
+<h4>Código exercício 8</h4>
+<pre class="python"><code>
+# 1. Definição das variáveis base
 
-public class ConcatenarParcelas 
-{
-    public static void main(String[] args)
-    {
-        Scanner leitor = new Scanner(System.in);
+preco_unitario = 100.00
 
-        // No Java, precisamos declarar que as variáveis são do tipo String
-        System.out.print(&quot;Digite a primeira parcela: &quot;);
-        String parcela1 = leitor.nextLine();
+quantidade = int(input(&quot;Quantas unidades você deseja comprar? &quot;))
 
-        System.out.print(&quot;Digite a segunda parcela: &quot;);
-        String parcela2 = leitor.nextLine();
+# 2. Cálculo do valor total sem desconto
+valor_total = preco_unitario * quantidade
 
-        // O sinal de + entre Strings junta os textos (concatenação)
-        String soma = parcela1 + parcela2;
+# 3. Verificação da condição de desconto
+if quantidade &gt;= 10:
+    # Aplica 10% de desconto
+    desconto = valor_total * 0.10
+    valor_final = valor_total - desconto
+    print(f&quot;Você ganhou 10% de desconto! Valor economizado: R$ {desconto:.2f}&quot;)
+else:
+    # Sem desconto
+    valor_final = valor_total
+    print(&quot;Quantidade insuficiente para desconto.&quot;)
 
-        System.out.println(&quot;O resultado da soma é: &quot; + soma);
-
-        leitor.close();
-    }
-}
-</code></pre>
-<p>Veja o código a seguir, quase igual ao anterior</p>
-<pre class="c"><code>
-import java.util.Scanner; // Importa a biblioteca para leitura de dados
-
-public class SomaReais
-{
-    public static void main(String[] args)
-    {
-        // Criamos um objeto Scanner para ler a entrada do teclado
-        Scanner leitor = new Scanner(System.in);
-
-        // Definindo as variáveis para números reais
-        float parcela1, parcela2, soma;
-
-        // Entrada da primeira parcela
-        System.out.print(&quot;Digite a primeira parcela: &quot;);
-        parcela1 = leitor.nextFloat(); 
-
-        // Entrada da segunda parcela
-        System.out.print(&quot;Digite a segunda parcela: &quot;);
-        parcela2 = leitor.nextFloat();
-
-        // Processamento
-        soma = parcela1 + parcela2;
-
-        // Saída dos dados
-        // O Java também aceita o printf igualzinho ao C!
-        System.out.printf(&quot;O resultado da soma é: %.2f\n&quot;, soma);
-
-        // Fechamos o leitor por boa prática
-        leitor.close();
-    }
-}
-</code></pre>
-</div>
-<div id="exemplo-16" class="section level3">
-<h3>Exemplo-16:</h3>
-<p>Vamos fazer um algoritmo para <strong><em>ler do
-teclado</em></strong> um número, e <strong><em>escrever na
-tela</em></strong> este numero.</p>
-<p><strong>Repita o comando</strong> de <strong>ler do teclado</strong>
-5 vezes:</p>
-<p>Use a <strong>linguagem JAVA</strong>:</p>
-<pre class="c"><code>
-import java.util.Scanner; // Importa a classe Scanner para leitura de dados
-
-public class RepeticaoWhile
-{
-    public static void main(String[] args)
-    {
-        // Criamos o objeto leitor para o teclado
-        Scanner leitor = new Scanner(System.in);
-
-        // 1. Declaração das variáveis
-        int variavelNumero;
-        int variavelContador = 1;
-
-        // 2. Entrada de dados
-        System.out.print(&quot;Digite um numero: &quot;);
-        variavelNumero = leitor.nextInt(); // Lê um número inteiro
-
-        // 3. Estrutura de repetição (While)
-        // Assim como no C, a condição fica entre parênteses ()
-        while (variavelContador &lt;= 5)
-        {
-            // No Java, o println já pula linha automaticamente
-            System.out.println(variavelNumero);
-            
-            // Incremento do contador
-            variavelContador = variavelContador + 1;
-        }
-
-        // Fechar o leitor por boa prática
-        leitor.close();
-    }
-}
-</code></pre>
-</div>
-<div id="exemplo-17" class="section level3">
-<h3>Exemplo-17:</h3>
-<p>Escreva um pseudo-código para ler dois números do teclado. Decida
-qual dos dois números é maios e escreva na tela qual dos números é
-maior.</p>
-<p>Use a <strong>linguagem JAVA</strong>:</p>
-<pre class="python"><code>import java.util.Scanner;
-
-public class CompararNumeros
-{
-    public static void main(String[] args)
-    {
-        Scanner leitor = new Scanner(System.in);
-        float numero1, numero2;
-
-        // Entrada do primeiro número
-        System.out.println(&quot;Digite o primeiro numero:&quot;);
-        numero1 = leitor.nextFloat();
-
-        // Entrada do segundo número
-        System.out.println(&quot;Digite o segundo numero:&quot;);
-        numero2 = leitor.nextFloat();
-
-        // Estrutura de Decisão
-        if (numero1 &gt; numero2)
-        {
-            System.out.printf(&quot;O maior numero e: %.2f\n&quot;, numero1);
-        } 
-        else if (numero2 &gt; numero1) {
-            System.out.printf(&quot;O maior numero e: %.2f\n&quot;, numero2);
-        } 
-        else
-        {
-            System.out.println(&quot;Os dois numeros sao iguais.&quot;);
-        }
-
-        leitor.close();
-    }
-}</code></pre>
-</div>
-<div id="ferramentas" class="section level3">
-<h3>Ferramentas:</h3>
-<div id="instalar-o-microsoft-build-tools-vs2022" class="section level4">
-<h4>Instalar o Microsoft Build Tools VS2022</h4>
-<pre class="cmd"><code>winget install --id=Microsoft.VisualStudio.2022.BuildTools -e</code></pre>
-</div>
-</div>
+# 4. Exibição do resultado
+print(f&quot;O valor final da sua compra é: R$ {valor_final:.2f}&quot;)</code></pre>
 </div>
 </div>
 

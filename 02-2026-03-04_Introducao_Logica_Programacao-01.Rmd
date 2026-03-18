@@ -673,7 +673,7 @@ public class CompararNumeros
 winget install --id=Microsoft.VisualStudio.2022.BuildTools -e
 ```
 
-```{r introducao-logica-programacao-01, eval=FALSE, include=FALSE}
+```{r introducao-logica-programacao-aula-html, eval=FALSE, include=FALSE}
 rmarkdown::render("02-2026-03-04_Introducao_Logica_Programacao-01.Rmd", output_dir="docs", output_file ="temporario.html" , output_format = "html_document") ; utils::browseURL("docs/temporario.html")
 ```
 

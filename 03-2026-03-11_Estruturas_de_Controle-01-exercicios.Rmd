@@ -43,7 +43,6 @@ for numero in range(10, 101, 10):
 
 
 
-
 ```
 
 [Exercício 3](03-aula03/exercicios/parte-01-Estrutura-Repeticao/exercicio-3/exercicio3-enunciado.txt)
@@ -112,7 +111,6 @@ for i in range(1, 11):
 
     resultado = numero * i
     print(f"{numero} x {i} = {resultado}")
-
 
 
 
@@ -241,6 +239,10 @@ else:
 print(f"O valor final da sua compra é: R$ {valor_final:.2f}")
 ```
 
-```{r 03-estrutura-controle-repeticao-exercicios, eval=FALSE, include=FALSE}
+```{r 03-estrutura-controle-repeticao-exercicios-html, eval=FALSE, include=FALSE}
 rmarkdown::render("03-2026-03-11_Estruturas_de_Controle-01-exercicios.Rmd", output_dir="docs", output_file ="temporario.html" , output_format = "html_document") ; utils::browseURL("docs/temporario.html")
+```
+
+```{r 03-estrutura-controle-repeticao-exercicios-word, eval=FALSE, include=FALSE}
+rmarkdown::render("03-2026-03-11_Estruturas_de_Controle-01-exercicios.Rmd", output_dir="docs", output_file ="temporario.docx" , output_format = "word_document") ; utils::browseURL("docs/temporario.docx")
 ```

@@ -375,7 +375,12 @@ Aqui utilizamos:
 
 
 
-```{r aula-tipos-de-variaveis-04, eval=FALSE, include=FALSE}
+```{r aula-tipos-de-variaveis-04-aula-html, eval=FALSE, include=FALSE}
 rmarkdown::render("04-2026-03-18_Tipos_De_Variaveis.Rmd", output_dir="docs", output_file ="temporario.html" , output_format = "html_document") ; utils::browseURL("docs/temporario.html")
+```
+
+
+```{r aula-tipos-de-variaveis-04-aula-word, eval=FALSE, include=FALSE}
+rmarkdown::render("04-2026-03-18_Tipos_De_Variaveis.Rmd", output_dir="docs", output_file ="temporario.docx" , output_format = "word_document") ; utils::browseURL("docs/temporario.docx")
 ```
 

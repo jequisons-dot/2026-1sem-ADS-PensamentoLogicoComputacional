@@ -165,6 +165,12 @@ Explique o resultado.
 
 ---
 
-```{r aula-tipos-de-variaveis-04-exercicios, eval=FALSE, include=FALSE}
+```{r aula-tipos-de-variaveis-04-exercicios-html, eval=FALSE, include=FALSE}
 rmarkdown::render("04-2026-03-18_Tipos_De_Variaveis-exercicios.Rmd", output_dir="docs", output_file ="temporario.html" , output_format = "html_document") ; utils::browseURL("docs/temporario.html")
 ```
+
+```{r aula-tipos-de-variaveis-04-exercicios-word, eval=FALSE, include=FALSE}
+rmarkdown::render("04-2026-03-18_Tipos_De_Variaveis-exercicios.Rmd", output_dir="docs", output_file ="temporario.docx" , output_format = "word_document") ; utils::browseURL("docs/temporario.docx")
+```
+
+
